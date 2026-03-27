@@ -3,7 +3,7 @@ appName: my-app
 
 # 镜像配置 (使用 nginx 确保能跑起来)
 image:
-  repository: docker.changqingyun.cn/obs/nginx
+  repository: docker.changqingyun.cn/mirror/obs/nginx
   tag: "1.14.2"
   pullPolicy: IfNotPresent
 
