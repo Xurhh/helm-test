@@ -19,20 +19,20 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: http
+            - name: http2
               containerPort: {{ .Values.service.targetPort }}
               protocol: TCP
           # 增加健康检查，Argo CD 会依赖这个判断状态
           livenessProbe:
             httpGet:
               path: /
-              port: http
+              port: http2
             initialDelaySeconds: 5
             periodSeconds: 10
           readinessProbe:
             httpGet:
               path: /
-              port: http
+              port: http2
             initialDelaySeconds: 5
             periodSeconds: 5
           resources:

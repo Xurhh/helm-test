@@ -8,8 +8,8 @@ spec:
   type: ClusterIP
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: http2
       protocol: TCP
-      name: http
+      name: http2
   selector:
     app: {{ .Values.appName }}
