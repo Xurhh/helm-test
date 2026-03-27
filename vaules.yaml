@@ -1,0 +1,22 @@
+# 应用名称
+appName: my-app
+
+# 镜像配置 (使用 nginx 确保能跑起来)
+image:
+  repository: docker.changqingyun.cn/obs/nginx
+  tag: "1.14.2"
+  pullPolicy: IfNotPresent
+
+# 服务端口
+service:
+  port: 80
+  targetPort: 80
+
+# 副本数
+replicaCount: 1
+
+# Ingress 配置
+ingress:
+  enabled: true
+  className: "nginx" 
+  host: my-app.local 
